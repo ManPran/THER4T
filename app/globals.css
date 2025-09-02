@@ -1,0 +1,132 @@
+/* Tailwind CSS v4 Configuration */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color scheme to match Rise for Texas logo - red, navy blue, and beige */
+  --background: oklch(0.98 0.01 60); /* Warm beige background */
+  --foreground: oklch(0.15 0.02 20); /* Dark navy text */
+  --card: oklch(0.99 0.005 60); /* Light beige card background */
+  --card-foreground: oklch(0.15 0.02 20); /* Dark navy card text */
+  --popover: oklch(0.99 0.005 60); /* Light beige popover */
+  --popover-foreground: oklch(0.15 0.02 20); /* Dark navy popover text */
+  --primary: oklch(0.45 0.22 15); /* Texas red primary color */
+  --primary-foreground: oklch(0.98 0.01 60); /* Beige text on primary */
+  --secondary: oklch(0.25 0.08 240); /* Navy blue secondary */
+  --secondary-foreground: oklch(0.98 0.01 60); /* Beige text on secondary */
+  --muted: oklch(0.94 0.01 60); /* Light beige muted */
+  --muted-foreground: oklch(0.45 0.02 20); /* Medium gray muted text */
+  --accent: oklch(0.25 0.08 240); /* Navy blue accent */
+  --accent-foreground: oklch(0.98 0.01 60); /* Beige accent text */
+  --destructive: oklch(0.55 0.25 15); /* Red destructive */
+  --destructive-foreground: oklch(0.98 0.01 60); /* Beige destructive text */
+  --border: oklch(0.85 0.01 60); /* Light beige borders */
+  --input: oklch(0.96 0.005 60); /* Very light beige input background */
+  --ring: oklch(0.45 0.22 15 / 0.5); /* Primary red focus ring */
+  --chart-1: oklch(0.45 0.22 15); /* Texas red for charts */
+  --chart-2: oklch(0.25 0.08 240); /* Navy blue for charts */
+  --chart-3: oklch(0.88 0.02 60); /* Light beige for charts */
+  --chart-4: oklch(0.65 0.15 45); /* Warm orange for charts */
+  --chart-5: oklch(0.45 0.02 20); /* Dark gray for charts */
+  --radius: 0.5rem;
+  --sidebar: oklch(0.96 0.01 60); /* Light beige sidebar */
+  --sidebar-foreground: oklch(0.15 0.02 20); /* Dark navy sidebar text */
+  --sidebar-primary: oklch(0.45 0.22 15); /* Texas red sidebar primary */
+  --sidebar-primary-foreground: oklch(0.98 0.01 60); /* Beige sidebar primary text */
+  --sidebar-accent: oklch(0.25 0.08 240); /* Navy blue sidebar accent */
+  --sidebar-accent-foreground: oklch(0.98 0.01 60); /* Beige sidebar accent text */
+  --sidebar-border: oklch(0.85 0.01 60); /* Light beige sidebar border */
+  --sidebar-ring: oklch(0.45 0.22 15 / 0.5); /* Red focus ring */
+  --font-inter: "Inter", sans-serif;
+  --font-work-sans: "Work Sans", serif;
+}
+
+.dark {
+  /* Updated dark mode colors to maintain Texas theme */
+  --background: oklch(0.12 0.01 240); /* Dark navy background */
+  --foreground: oklch(0.95 0.01 60); /* Light beige text */
+  --card: oklch(0.18 0.02 240); /* Dark navy card */
+  --card-foreground: oklch(0.95 0.01 60); /* Light beige card text */
+  --popover: oklch(0.18 0.02 240); /* Dark navy popover */
+  --popover-foreground: oklch(0.95 0.01 60); /* Light beige popover text */
+  --primary: oklch(0.55 0.25 15); /* Brighter red primary in dark */
+  --primary-foreground: oklch(0.95 0.01 60); /* Light beige text on primary */
+  --secondary: oklch(0.35 0.12 240); /* Lighter navy secondary in dark */
+  --secondary-foreground: oklch(0.95 0.01 60); /* Light beige text on secondary */
+  --muted: oklch(0.22 0.02 240); /* Dark navy muted */
+  --muted-foreground: oklch(0.65 0.01 60); /* Medium beige muted text */
+  --accent: oklch(0.55 0.25 15); /* Red accent in dark mode */
+  --accent-foreground: oklch(0.95 0.01 60); /* Light beige accent text */
+  --destructive: oklch(0.65 0.28 15); /* Brighter red destructive */
+  --destructive-foreground: oklch(0.95 0.01 60); /* Light beige destructive text */
+  --border: oklch(0.25 0.02 240); /* Dark navy border */
+  --input: oklch(0.22 0.02 240); /* Dark navy input */
+  --ring: oklch(0.55 0.25 15 / 0.5); /* Red focus ring */
+  --chart-1: oklch(0.55 0.25 15); /* Red charts */
+  --chart-2: oklch(0.35 0.12 240); /* Navy charts */
+  --chart-3: oklch(0.75 0.02 60); /* Beige charts */
+  --chart-4: oklch(0.75 0.18 45); /* Orange charts */
+  --chart-5: oklch(0.65 0.01 60); /* Light gray charts */
+  --sidebar: oklch(0.18 0.02 240); /* Dark navy sidebar */
+  --sidebar-foreground: oklch(0.95 0.01 60); /* Light beige sidebar text */
+  --sidebar-primary: oklch(0.55 0.25 15); /* Red sidebar primary */
+  --sidebar-primary-foreground: oklch(0.95 0.01 60); /* Light beige sidebar primary text */
+  --sidebar-accent: oklch(0.35 0.12 240); /* Navy sidebar accent */
+  --sidebar-accent-foreground: oklch(0.95 0.01 60); /* Light beige sidebar accent text */
+  --sidebar-border: oklch(0.25 0.02 240); /* Dark navy sidebar border */
+  --sidebar-ring: oklch(0.55 0.25 15 / 0.5); /* Red sidebar ring */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-work-sans);
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Base styles for Tailwind v4 */
+* {
+  border-color: var(--border);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
